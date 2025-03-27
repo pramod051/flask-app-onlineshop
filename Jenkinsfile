@@ -9,7 +9,15 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/pramod051/flask-app-onlineshop.git'
+                script {
+                    checkout([$class: 'GitSCM', 
+                        branches: [[name: '*/master']],
+                        userRemoteConfigs: [[
+                            url: 'https://github.com/pramod051/flask-app-onlineshop.git',
+                            credentialsId: 'github-creds'  // Use the credentials ID from Step 2
+                        ]]
+                    ])
+                }
             }
         }
 
