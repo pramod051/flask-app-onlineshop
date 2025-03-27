@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Your Cart</h1>
+        <ul>
+            {% for item in cart %}
+                <li>{{ item.name }} - ${{ item.price }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('index') }}">Continue Shopping</a>
+        <a href="{{ url_for('clear_cart') }}">Clear Cart</a>
+    </div>
+</body>
+</html>
+
