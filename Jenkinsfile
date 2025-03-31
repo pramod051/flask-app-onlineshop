@@ -14,7 +14,7 @@ pipeline {
                         branches: [[name: '*/master']],
                         userRemoteConfigs: [[
                             url: 'https://github.com/pramod051/flask-app-onlineshop.git',
-                            credentialsId: 'github-creds'  // Use the credentials ID from Step 2
+                            credentialsId: 'github-key'  // Use the credentials ID from Step 2
                         ]]
                     ])
                 }
